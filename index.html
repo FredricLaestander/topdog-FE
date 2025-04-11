@@ -19,20 +19,20 @@
     <title>Top Dog</title>
   </head>
 
-  <body>
-    <header>
+  <body class="text-slate-800">
+    <header class="flex p-4 justify-between">
       <a href="/">
         <img src="/logo.svg" alt="logo" />
       </a>
 
-      <nav>
-        <div>
-          <a href="/">Home</a>
-          <a href="/createTierList">Create</a>
+      <nav class="px-4 flex md:gap-8 items-center">
+        <div class="hidden text-zinc-700 md:flex md:gap-8">
+          <a href="/" class="link">Home</a>
+          <a href="/createTierList" class="link">Create tier list</a>
         </div>
 
-        <a href="/login">Log in</a>
-        <img src="/profile.svg" alt="profile icon" class="size-8" />
+        <a href="/login" class="button">Log in</a>
+        <!-- <img src="/profile.svg" alt="profile icon" class="size-8" /> -->
       </nav>
     </header>
     <script type="module" src="/src/main.ts"></script>
