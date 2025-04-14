@@ -19,7 +19,9 @@
     <title>Top Dog</title>
   </head>
 
-  <body class="text-zinc-800 font-lexend font-medium">
+  <body
+    class="text-zinc-800 font-lexend font-medium flex flex-col items-center"
+  >
     <header class="flex p-4 justify-between absolute w-full">
       <a href="/">
         <img src="/logo.svg" alt="logo" />
@@ -36,7 +38,7 @@
       </nav>
     </header>
 
-    <main class="w-full px-40 pt-36 gap-8 flex flex-col">
+    <main class="max-w-5xl p-4 pt-36 gap-8 flex flex-col">
       <div>
         <h1 class="text-xl text-zinc-900">Create a tier list for anything</h1>
         <p>
@@ -44,13 +46,16 @@
           best to worst.
         </p>
       </div>
-      <section>
-        <h2 class="text-zinc-900">Top Dog featured</h2>
-        <div>Lists</div>
-      </section>
-      <section>
+      <!-- <section>
         <h2 class="text-zinc-900">Your tier list</h2>
         <div>Lists</div>
+      </section> -->
+      <section class="flex flex-col gap-2">
+        <h2 class="text-zinc-900">Top Dog featured</h2>
+        <ul
+          id="featured"
+          class="flex flex-row items-center gap-4 overflow-x-scroll"
+        ></ul>
       </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
