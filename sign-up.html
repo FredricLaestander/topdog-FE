@@ -38,68 +38,80 @@
     </header>
 
     <main
-      class="w-full grow max-w-sm px-4 pt-30 pb-12 flex flex-col items-center h-full flex-between"
+      class="w-full grow max-w-lg px-4 pt-30 pb-12 flex flex-col items-center h-full flex-between"
     >
-      <form action="submit" class="flex grow flex-col gap-8 w-full">
+      <section class="flex grow flex-col gap-8 w-full">
         <h2 class="font-bold w-full text-center text-2xl text-zinc-950">
           Create the bark in you!
         </h2>
 
-        <section class="flex flex-col flex-between gap-8">
+        <form id="sign-up" class="flex flex-col flex-between gap-8">
           <div class="flex flex-col gap-4">
             <div class="input">
-              <label for="username">Username</label>
+              <div>
+                <label for="username">Username</label>
+                <span id="username-error"></span>
+              </div>
               <input
                 class="bg-white border-1 border-zinc-200"
                 type="text"
                 name="username"
                 id="username"
                 placeholder="Enter a unique username"
+                required
               />
             </div>
 
             <div class="input">
-              <label for="Email">Email</label>
+              <div>
+                <label for="Email">Email</label>
+                <span id="email-error"></span>
+              </div>
               <input
                 class="bg-white border-1 border-zinc-200"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Enter a valid email"
+                required
               />
             </div>
 
             <div class="input">
-              <label for="password">Password</label>
+              <div>
+                <label for="password">Password</label>
+                <span id="password-error"></span>
+              </div>
               <input
                 class="bg-white border-1 border-zinc-200"
                 type="password"
                 name="password"
                 id="password"
                 placeholder="Enter a strong password"
+                required
               />
             </div>
 
             <div class="input">
-              <label for="password-confirmation">Confirm password</label>
+              <div>
+                <label for="password-confirmation">Confirm password</label>
+                <span id="password-confirmation-error"></span>
+              </div>
               <input
                 class="bg-white border-1 border-zinc-200"
                 type="password"
                 name="password-confirmation"
                 id="password-confirmation"
                 placeholder="Enter password again"
+                required
               />
             </div>
           </div>
 
           <button class="button">Create Account</button>
-        </section>
-      </form>
-
-      <span class="flex gap-1.5">
-        <p>Already part of the flock?</p>
-        <a href="/login" class="text-blue-400 hover:underline">Log in</a>
-      </span>
+          <span id="error" class="text-red-400 text-end font-bold"></span>
+        </form>
+      </section>
     </main>
     <script type="module" src="/src/signUp.ts"></script>
   </body>
