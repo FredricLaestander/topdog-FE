@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="/logomarkLightMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/logomarkDarkMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+  </head>
+  <body
+    class="text-zinc-800 font-lexend font-normal min-h-screen flex flex-col items-center"
+  >
+    <header class="flex p-4 justify-between absolute w-full">
+      <a href="/">
+        <img src="/logo.svg" alt="logo" />
+      </a>
+
+      <nav class="px-4 flex md:gap-8 items-center">
+        <div class="hidden text-zinc-700 md:flex md:gap-8">
+          <a href="/" class="link">Home</a>
+          <a href="/createTierList" class="link">Create tier list</a>
+        </div>
+
+        <a href="/login" class="button">Log in</a>
+        <!-- <img src="/profile.svg" alt="profile icon" class="size-8" /> -->
+      </nav>
+    </header>
+
+    <main
+      class="w-full grow max-w-lg px-4 pt-30 pb-12 flex flex-col items-center h-full flex-between"
+    >
+      <section class="flex grow flex-col gap-8 w-full">
+        <h2 class="font-bold w-full text-center text-2xl text-zinc-950">
+          Create the bark in you!
+        </h2>
+
+        <form id="sign-up" class="flex flex-col flex-between gap-8">
+          <div class="flex flex-col gap-4">
+            <div class="input">
+              <div>
+                <label for="username">Username</label>
+                <span id="username-error"></span>
+              </div>
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter a unique username"
+                required
+              />
+            </div>
+
+            <div class="input">
+              <div>
+                <label for="Email">Email</label>
+                <span id="email-error"></span>
+              </div>
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter a valid email"
+                required
+              />
+            </div>
+
+            <div class="input">
+              <div>
+                <label for="password">Password</label>
+                <span id="password-error"></span>
+              </div>
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter a strong password"
+                required
+              />
+            </div>
+
+            <div class="input">
+              <div>
+                <label for="password-confirmation">Confirm password</label>
+                <span id="password-confirmation-error"></span>
+              </div>
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="password"
+                name="password-confirmation"
+                id="password-confirmation"
+                placeholder="Enter password again"
+                required
+              />
+            </div>
+          </div>
+
+          <button class="button">Create Account</button>
+          <span id="error" class="text-red-400 text-end font-bold"></span>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/signUp.ts"></script>
+  </body>
+</html>
