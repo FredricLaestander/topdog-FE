@@ -2,25 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="/logomarkLightMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/logomarkDarkMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Log in</title>
   </head>
+  
   <body class="text-zinc-800 font-lexend font-normal min-h-screen flex flex-col items-center">
-    <header class="flex p-4 justify-between absolute w-full">
-        <a href="/">
-          <img src="/logo.svg" alt="logo" />
-        </a>
-  
-        <nav class="px-4 flex md:gap-8 items-center">
-          <div class="hidden text-zinc-700 md:flex md:gap-8">
-            <a href="/" class="link">Home</a>
-            <a href="/createTierList" class="link">Create tier list</a>
-          </div>
-  
-          <a href="/log-in" class="button">Log in</a>
-          <!-- <img src="/profile.svg" alt="profile icon" class="size-8" /> -->
-        </nav>
-    </header>
+    <div id="header"></div>
 
     <main
       class="w-full grow max-w-lg px-4 pt-30 pb-12 flex flex-col items-center h-full justify-between"

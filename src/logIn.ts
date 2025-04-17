@@ -1,4 +1,7 @@
 import "./style.css";
+import { header } from "./header";
+
+header();
 
 const url = `${import.meta.env.VITE_BACKEND_URL}/auth/login`;
 
