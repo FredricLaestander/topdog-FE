@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="text-zinc-800 font-lexend font-normal min-h-screen flex flex-col items-center">
+    <header class="flex p-4 justify-between absolute w-full">
+        <a href="/">
+          <img src="/logo.svg" alt="logo" />
+        </a>
+  
+        <nav class="px-4 flex md:gap-8 items-center">
+          <div class="hidden text-zinc-700 md:flex md:gap-8">
+            <a href="/" class="link">Home</a>
+            <a href="/createTierList" class="link">Create tier list</a>
+          </div>
+  
+          <a href="/log-in" class="button">Log in</a>
+          <!-- <img src="/profile.svg" alt="profile icon" class="size-8" /> -->
+        </nav>
+    </header>
+
+    <main
+      class="w-full grow max-w-lg px-4 pt-30 pb-12 flex flex-col items-center h-full justify-between"
+    >
+      <section class="flex grow flex-col gap-8 w-full">
+        <h2 class="font-bold w-full text-center text-2xl text-zinc-950">
+          Enter the doghouse
+        </h2>
+
+        <form id="log-in" class="flex flex-col gap-8">
+            <div class="input">
+              <div>
+                <label for="Email">Email</label>
+                <span id="email-error"></span>
+              </div>
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="input">
+              <div>
+                <label for="password">Password</label>
+                <span id="password-error"></span>
+              </div>
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+          </div>
+
+          <button class="button">Log in</button>
+          <span id="error" class="text-red-400 text-end font-bold"></span>
+        </form>
+      </section>
+
+      <span class="flex gap-1.5">
+        <p>A new puppy?</p>
+        <a href="/sign-up" class="text-blue-400 hover:underline"
+          >Create Account</a
+        >
+      </span>
+    </main>
+    <script type="module" src="/src/logIn.ts"></script>
+  </body>
+</html>
