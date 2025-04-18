@@ -10,15 +10,17 @@ import {
   X,
 } from "lucide";
 
-createIcons({
-  icons: {
-    EllipsisVertical,
-    House,
-    ImageOff,
-    Plus,
-    Search,
-    Settings,
-    Trash2,
-    X,
-  },
-});
+export const icons = () => {
+  createIcons({
+    icons: {
+      EllipsisVertical,
+      House,
+      ImageOff,
+      Plus,
+      Search,
+      Settings,
+      Trash2,
+      X,
+    },
+  });
+};
