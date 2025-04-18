@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="/logomarkLightMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/logomarkDarkMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Dog</title>
+  </head>
+
+  <body
+    class="text-zinc-800 font-lexend font-medium flex flex-col items-center"
+  >
+    <div id="header"></div>
+
+    <main class="max-w-5xl p-4 pt-36 gap-8 flex flex-col">
+      <section class="grow flex flex-col gap-3">
+        <div class="flex w-full gap-4">
+          <h2 class="w-full text-zinc-950 text-xl">My new tier list</h2>
+          <button class="size-8 p-1">
+            <i data-lucide="settings" class="size-6 text-zinc-400"></i>
+          </button>
+        </div>
+
+        <p class="text-zinc-400 text-sm">
+          A long description about how nice and handsome this tierlist can be
+          when saying something cool in here
+        </p>
+
+        <div class="flex items-center gap-2">
+          <img src="/profile.svg" alt="profile" class="size-6" />
+          <p class="text-xs text-zinc-950">@username</p>
+        </div>
+      </section>
+
+      <ul class="w-full">
+        <li class="h-20 md:h-28">
+          <div
+            class="size-20 md:size-28 bg-red-400 flex items-center justify-center"
+          >
+            <p class="text-center break-words min-w-0 line-clamp-4">Tier</p>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <script type="module" src="/src/list.ts"></script>
+  </body>
+</html>
