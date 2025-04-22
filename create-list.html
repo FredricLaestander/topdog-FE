@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="/logomarkLightMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/logomarkDarkMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create list</title>
+  </head>
+  
+  <body class="text-zinc-800 font-lexend font-normal min-h-screen flex flex-col items-center">
+    <div id="header"></div>
+
+    <main
+      class="w-full grow max-w-lg px-4 pt-30 pb-12 flex flex-col items-center h-full justify-between"
+    >
+      <section class="flex grow flex-col gap-8 w-full">
+        <h2 class="font-bold w-full text-center text-2xl text-zinc-950">
+          Create a tier list
+        </h2>
+
+        <form id="createList" class="flex flex-col gap-8">
+            <div class="input">
+            <label for="name">Tier list name</label>
+
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Tier list name"
+                required
+              />
+            </div>
+
+            <div class="input">
+              <label for="description">Description</label>
+
+              <input
+                class="bg-white border-1 border-zinc-200"
+                type="text"
+                name="description"
+                id="description"
+                placeholder="Description"
+              />
+            </div>
+          </div>
+
+          <button class="button">Create tier list!</button>
+          <span id="error" class="text-red-400 text-end font-bold"></span>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/createList.ts"></script>
+  </body>
+</html>
