@@ -3,6 +3,13 @@ import { header } from "./header";
 
 header();
 
+const name = document.querySelector<HTMLInputElement>("#name")!;
+const description = document.querySelector<HTMLInputElement>("#description")!;
+const errorSpan = document.querySelector<HTMLSpanElement>("#error")!;
+const createListForm = document.getElementById("createList")!;
+
+const url = `${import.meta.env.VITE_BACKEND_URL}/lists`;
+
 function main() {
   const accessToken = localStorage.getItem("access-token");
 
@@ -10,14 +17,6 @@ function main() {
     window.location.pathname = "/log-in";
     return;
   }
-
-  const url = `${import.meta.env.VITE_BACKEND_URL}/lists`;
-
-  const name = document.querySelector<HTMLInputElement>("#name")!;
-  const description = document.querySelector<HTMLInputElement>("#description")!;
-  const errorSpan = document.querySelector<HTMLSpanElement>("#error")!;
-
-  const createListForm = document.getElementById("createList")!;
 
   createListForm.addEventListener("submit", async (e) => {
     e.preventDefault();
