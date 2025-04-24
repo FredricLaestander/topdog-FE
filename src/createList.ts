@@ -1,6 +1,8 @@
 import "./style.css";
 import { header } from "./header";
 
+header();
+
 function main() {
   const accessToken = localStorage.getItem("access-token");
 
@@ -8,8 +10,6 @@ function main() {
     window.location.pathname = "/log-in";
     return;
   }
-
-  header();
 
   const url = `${import.meta.env.VITE_BACKEND_URL}/lists`;
 
