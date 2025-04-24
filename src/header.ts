@@ -26,7 +26,6 @@ export async function header() {
   createListLink.innerText = "Create tier list";
   createListLink.href = "/create-list";
   createListLink.className = "link";
-  createListLink.id = "createList";
 
   desktopNav.append(homeLink, createListLink);
 
