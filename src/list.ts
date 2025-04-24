@@ -148,3 +148,33 @@ tierListSettings.addEventListener("submit", (event) => {
 });
 
 getListById();
+
+const deleteList = async () => {
+  try {
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + accessToken,
+      },
+    });
+
+    const data = (await response.json()) as { errorMessage: string } | string;
+
+    if (typeof data === "object" && "errorMessage" in data) {
+      throw new Error(data.errorMessage);
+    }
+
+    window.location.href = "/";
+  } catch (error) {
+    if (error instanceof Error) {
+      errorStatus.innerText = error.message;
+    }
+  }
+};
+
+const deleteListButton = document.querySelector<HTMLButtonElement>("#delete")!;
+
+deleteListButton.addEventListener("click", () => {
+  deleteList();
+  toggleSettings();
+});
