@@ -1,1 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jvJQvZ5i)
+Start with `npm install`to install all dependencies
+
+Make sure the backend server is running.
+Once done, start the server locally with `npm run dev` and viola!
+
+Figma:
+https://www.figma.com/design/SUX6FPzvCbToW9AWzpAglD/top-dog?node-id=0-1&t=UMZNRPEX1O3HoTLL-1
