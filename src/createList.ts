@@ -45,7 +45,7 @@ function main() {
         );
       }
 
-      window.location.pathname = `/list?id=${data.listId}`;
+      window.location.assign(`/list?id=${data.listId}`);
     } catch (error) {
       if (error instanceof Error) {
         errorSpan.innerText = error.message;
