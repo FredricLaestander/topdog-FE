@@ -19,7 +19,6 @@ const colorPreset = [
 async function getLists() {
   const url = `${import.meta.env.VITE_BACKEND_URL}/lists`;
   const featured = document.querySelector("#featured")!;
-
   try {
     const response = await fetch(url);
 
@@ -34,7 +33,7 @@ async function getLists() {
     // TODO: implement zod to avoid any
     lists.forEach((list: any) => {
       const a = document.createElement("a");
-      a.href = `/lists/${list._id}`;
+      a.href = `/list?id=${list._id}`;
 
       const h3 = document.createElement("h3");
       h3.innerText = list.name;

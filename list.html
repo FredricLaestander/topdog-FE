@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="/logomarkLightMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="/logomarkDarkMode.svg"
+      type="image/svg+xml"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Dog</title>
+  </head>
+
+  <body
+    class="text-zinc-800 font-lexend font-medium flex flex-col items-center"
+  >
+    <div id="header"></div>
+
+    <main class="w-full max-w-5xl p-4 pt-36 gap-8 flex flex-col">
+      <section class="grow flex flex-col gap-3">
+        <div class="flex w-full gap-4">
+          <h2 id="listTitle" class="w-full text-zinc-950 text-xl"></h2>
+
+          <button id="open-settings" class="size-8 p-1 hidden">
+            <i data-lucide="settings" class="size-6 text-zinc-400"></i>
+          </button>
+        </div>
+
+        <p id="description" class="text-zinc-400 text-sm"></p>
+
+        <div class="flex justify-between w-full">
+          <div class="flex items-center gap-2">
+            <img src="/profile.svg" alt="profile" class="size-6" />
+
+            <p id="username" class="text-xs text-zinc-950"></p>
+          </div>
+
+          <p id="error" class="text-red-400"></p>
+        </div>
+      </section>
+
+      <ul id="tiers" class="w-full"></ul>
+    </main>
+
+    <div
+      id="tier-list-settings-modal"
+      class="hidden inset-0 flex-col items-center justify-between px-6 py-32 fixed bg-zinc-200/60 backdrop-blur-sm"
+    >
+      <form id="tier-list-settings" class="gap-8 w-full flex flex-col">
+        <div class="w-full flex justify-end">
+          <button class="p-1">
+            <i data-lucide="x" class="size-6 text-zinc-800"></i>
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <div class="input">
+            <div>
+              <label for="name">Name</label>
+            </div>
+            <input
+              class="bg-white/80 backdrop-blur-sm"
+              type="text"
+              name="name"
+              id="name-input"
+              placeholder="A good tier list name"
+            />
+          </div>
+
+          <div class="input">
+            <div>
+              <label for="description">Description</label>
+            </div>
+            <input
+              class="bg-white/80 backdrop-blur-sm"
+              type="text"
+              name="description"
+              id="description-input"
+              placeholder="A fitting description"
+            />
+          </div>
+        </div>
+      </form>
+
+      <button type="button" class="button justify-between items-center w-full">
+        <span>Delete list</span>
+        <i data-lucide="trash-2" class="size-6 text-white"></i>
+      </button>
+    </div>
+    <script type="module" src="/src/list.ts"></script>
+  </body>
+</html>
