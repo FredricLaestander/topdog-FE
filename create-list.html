@@ -17,8 +17,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create list</title>
   </head>
-  
-  <body class="text-zinc-800 font-lexend font-normal min-h-screen flex flex-col items-center">
+
+  <body
+    class="text-zinc-800 font-lexend font-normal min-h-screen flex flex-col items-center"
+  >
     <header id="header"></header>
 
     <main
@@ -30,30 +32,29 @@
         </h2>
 
         <form id="createList" class="flex flex-col gap-8">
-            <div class="input">
+          <div class="input">
             <label for="name">Tier list name</label>
 
-              <input
-                class="bg-white border-1 border-zinc-200"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Tier list name"
-                required
-              />
-            </div>
+            <input
+              class="bg-white border-1 border-zinc-200"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Tier list name"
+              required
+            />
+          </div>
 
-            <div class="input">
-              <label for="description">Description</label>
+          <div class="input">
+            <label for="description">Description</label>
 
-              <input
-                class="bg-white border-1 border-zinc-200"
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Description"
-              />
-            </div>
+            <input
+              class="bg-white border-1 border-zinc-200"
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Description"
+            />
           </div>
 
           <button class="button">Create tier list!</button>
