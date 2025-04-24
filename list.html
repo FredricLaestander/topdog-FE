@@ -28,16 +28,22 @@
       <section class="grow flex flex-col gap-3">
         <div class="flex w-full gap-4">
           <h2 id="listTitle" class="w-full text-zinc-950 text-xl"></h2>
-          <button id="open-settings" class="size-8 p-1">
+
+          <button id="open-settings" class="size-8 p-1 hidden">
             <i data-lucide="settings" class="size-6 text-zinc-400"></i>
           </button>
         </div>
 
         <p id="description" class="text-zinc-400 text-sm"></p>
 
-        <div class="flex items-center gap-2">
-          <img src="/profile.svg" alt="profile" class="size-6" />
-          <p id="username" class="text-xs text-zinc-950"></p>
+        <div class="flex justify-between w-full">
+          <div class="flex items-center gap-2">
+            <img src="/profile.svg" alt="profile" class="size-6" />
+
+            <p id="username" class="text-xs text-zinc-950"></p>
+          </div>
+
+          <p id="error" class="text-red-400"></p>
         </div>
       </section>
 
@@ -64,7 +70,7 @@
               class="bg-white/80 backdrop-blur-sm"
               type="text"
               name="name"
-              id="name"
+              id="name-input"
               placeholder="A good tier list name"
             />
           </div>
@@ -77,7 +83,7 @@
               class="bg-white/80 backdrop-blur-sm"
               type="text"
               name="description"
-              id="description"
+              id="description-input"
               placeholder="A fitting description"
             />
           </div>

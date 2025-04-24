@@ -6,27 +6,33 @@ import { List } from "./types";
 header();
 icons();
 
-const editNameInput = document.querySelector<HTMLInputElement>("#name")!;
+const editNameInput = document.querySelector<HTMLInputElement>("#name-input")!;
 const editDescriptionInput =
-  document.querySelector<HTMLInputElement>("#description")!;
+  document.querySelector<HTMLInputElement>("#description-input")!;
+const errorStatus = document.querySelector<HTMLSpanElement>("#error")!;
+
+const params = new URLSearchParams(window.location.search);
+const listId = params.get("id");
+const url = `${import.meta.env.VITE_BACKEND_URL}/lists/${listId}`;
+
+const h2 = document.getElementById("listTitle")!;
+const description = document.getElementById("description")!;
 
 async function getListById() {
-  const params = new URLSearchParams(window.location.search);
-  const listId = params.get("id");
-  const url = `${import.meta.env.VITE_BACKEND_URL}/lists/${listId}`;
-
   const tiers = document.querySelector("#tiers")!;
 
   try {
     const response = await fetch(url);
 
-    const list = (await response.json()) as List;
+    const list = (await response.json()) as List | { errorMessage: string };
 
-    const h2 = document.getElementById("listTitle")!;
+    if ("errorMessage" in list) {
+      throw Error(list.errorMessage);
+    }
+
     h2.innerText = list.name;
 
     if (list.description) {
-      const description = document.getElementById("description")!;
       description.innerText = list.description;
     }
 
@@ -58,8 +64,12 @@ async function getListById() {
     });
 
     editNameInput.value = list.name;
-    editDescriptionInput.value = list.description;
-  } catch (error) {}
+    editDescriptionInput.value = list.description ? list.description : "";
+  } catch (error) {
+    if (error instanceof Error) {
+      errorStatus.innerText = error.message;
+    }
+  }
 }
 
 function toggleSettings() {
@@ -83,13 +93,58 @@ openSettings.addEventListener("click", toggleSettings);
 const tierListSettings = document.querySelector<HTMLFormElement>(
   "#tier-list-settings"
 )!;
+
+const accessToken = localStorage.getItem("access-token");
+if (accessToken) {
+  openSettings.classList.remove("hidden");
+}
+
+const editList = async () => {
+  try {
+    if (!accessToken) {
+      alert("You cannot update someone elses list.");
+      return;
+    }
+
+    const values = {
+      name: editNameInput.value,
+      description: editDescriptionInput.value,
+    };
+
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+      body: JSON.stringify(values),
+    });
+
+    const list = (await response.json()) as List | { errorMessage: string };
+
+    if ("errorMessage" in list) {
+      throw new Error(list.errorMessage);
+    }
+
+    console.log(list);
+    h2.innerText = list.name;
+
+    if (!list.description || list.description === "") {
+      description.innerText = "";
+    } else {
+      description.innerText = list.description;
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      errorStatus.innerText = error.message;
+    }
+  }
+};
+
 tierListSettings.addEventListener("submit", (event) => {
   event.preventDefault();
+  editList();
   toggleSettings();
 });
-
-function editList(
-  
-) {}
 
 getListById();
